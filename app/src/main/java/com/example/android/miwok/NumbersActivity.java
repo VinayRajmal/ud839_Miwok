@@ -17,6 +17,14 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+
+import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -24,5 +32,32 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+
+        // Create an array of words
+        ArrayList<Word> words = new ArrayList<>();
+        words.add(new Word("one", "ek"));
+        words.add(new Word("two", "do"));
+        words.add(new Word("three", "teen"));
+        words.add(new Word("four", "Chaar"));
+        words.add(new Word("five", "paanch"));
+        words.add(new Word("six", "Chey"));
+
+        // Verify the contents of the array by printing out each array element to the logs
+        Log.v("NumbersActivity", "Word at index 0: " + words.get(0));
+        Log.v("NumbersActivity", "Word at index 1: " + words.get(1));
+
+
+        ListView rootView = (ListView) findViewById(R.id.numbersRoot);
+        /*
+        // Linear layout uses too much memory, and it is better to use ListView and ArrayAdapter to save memory
+        for (String word:words) {
+
+            TextView tempTextView = new TextView(this);
+            tempTextView.setText(word);
+            rootView.addView(tempTextView);
+        }*/
+
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
+        rootView.setAdapter(itemsAdapter);
     }
 }

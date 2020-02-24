@@ -28,22 +28,23 @@
         android:background="@color/category_numbers"
         android:text="@string/category_numbers" />
 
-    <TextView
-        android:id="@+id/family"
-        style="@style/CategoryStyle"
-        android:background="@color/category_family"
-        android:text="@string/category_family" />
 
     <TextView
-        android:id="@+id/colors"
+        android:id="@+id/gmailtry"
         style="@style/CategoryStyle"
-        android:background="@color/category_colors"
-        android:text="@string/category_colors" />
+        android:background="@color/category_gmail"
+        android:text="@string/gmail_try" />
 
     <TextView
-        android:id="@+id/phrases"
+        android:id="@+id/gmailexplicit"
         style="@style/CategoryStyle"
-        android:background="@color/category_phrases"
-        android:text="@string/category_phrases" />
+        android:background="@android:color/holo_red_dark"
+        android:text="Gmail explicit" />
+    <TextView
+        android:id="@+id/campuslink"
+        style="@style/CategoryStyle"
+        android:background="@android:color/holo_blue_light"
+        android:text="Campus Link" />
+
 
 </LinearLayout>
